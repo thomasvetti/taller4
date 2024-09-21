@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Javascript Evente Challenges: Challenge 24</title>
+</head>
+<body>
+    <h1>Javascript Evente Challenges: Challenge 24</h1>
+    <div id="contenedor">
+        <p>Here is the first paragraph of text</p>
+    </div>
+    <button id="añadirparrafo">Add a paragraph</button>
+<script>
+    document.getElementById("añadirparrafo").addEventListener("click", function() {
+        var nuevoParrafo = document.createElement("p");
+            nuevoParrafo.textContent = "Este es un nuevo parágrafo";
+            document.getElementById("contenedor").appendChild(nuevoParrafo);
+        });
+</script>
+</body>
+</html>
+
