@@ -12,16 +12,20 @@
     <button id="añadirparrafo">Add a paragraph</button>
     <button id="elimiarparrafo">remove a paragraph</button>
 <script>
+    var cuentaParrafos = 1;
     document.getElementById("añadirparrafo").addEventListener("click", function() {
+        
+        cuentaParrafos++;
         var nuevoParrafo = document.createElement("p");
-            nuevoParrafo.textContent = "Este es un nuevo parágrafo";
+            nuevoParrafo.textContent = "Este es un nuevo parrafo " + cuentaParrafos;
             document.getElementById("contenedor").appendChild(nuevoParrafo);
         });
         document.getElementById("elimiarparrafo").addEventListener("click", function() {
             var contenedor = document.getElementById("contenedor");
             var parrafos = contenedor.getElementsByTagName("p");
-            if (parrafos.length > 0 )  {
+            if (parrafos.length > 1 )  {
                 contenedor.removeChild(parrafos[parrafos.length - 1]); 
+                cuentaParrafos--;
             }
         });
 </script>
