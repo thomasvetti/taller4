@@ -10,11 +10,19 @@
         <p>Here is the first paragraph of text</p>
     </div>
     <button id="añadirparrafo">Add a paragraph</button>
+    <button id="elimiarparrafo">remove a paragraph</button>
 <script>
     document.getElementById("añadirparrafo").addEventListener("click", function() {
         var nuevoParrafo = document.createElement("p");
             nuevoParrafo.textContent = "Este es un nuevo parágrafo";
             document.getElementById("contenedor").appendChild(nuevoParrafo);
+        });
+        document.getElementById("elimiarparrafo").addEventListener("click", function() {
+            var contenedor = document.getElementById("contenedor");
+            var parrafos = contenedor.getElementsByTagName("p");
+            if (parrafos.length > 0 )  {
+                contenedor.removeChild(parrafos[parrafos.length - 1]); 
+            }
         });
 </script>
 </body>
