@@ -7,15 +7,25 @@
 </head>
 <body>
 
-<p id="idparrafo  ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quod.</p>
+<p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, quod.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, ab necessitatibus.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et ex qui atque.</p>
 
-<button onclick="changeColor()">Cambiar color a verde</button>
+<button id="cambioBoton">Cambiar color a verde</button>
 
 <script>
-  function changeColor() {
-    var parrafo  = document.getElementById("idparrafo  ");
-    parrafo .style.color = "green";
-  }
+    document.getElementById("cambioBoton").addEventListener("click", cambioColor);
+    function cambioColor() {
+    var parrafos  = document.querySelectorAll("p");
+    parrafos.forEach(function(parrafo) {
+        if (parrafo .style.color === "green") {
+            parrafo .style.color = "red";}
+            else if (parrafo.style.color === "red") {
+                parrafo.style.color = "black";}
+            else {parrafo .style.color = "green";}
+    });
+
+}
 </script>
 
 </body>
